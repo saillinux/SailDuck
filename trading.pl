@@ -50,7 +50,7 @@ Win32::OLE->MessageLoop();
 my $XAReal = Win32::OLE->new('XA_DataSet.XAReal.1')
     or croak Win32::OLE->LastError();
 
-$XAReal->LoadFromResFile("$FindBin::Bin/res/H1_.res")
+$XAReal->LoadFromResFile("$FindBin::Bin/res/Real/H1_.res")
     or croak Win32::OLE->LastError();
 
 my $XARealEvents = sub {

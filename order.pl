@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use Carp;
 use Win32::OLE qw/EVENTS/;
+use FindBin;
 
 my $XASession = Win32::OLE->new('XA_Session.XASession')
     or croak Win32::OLE->LastError();
@@ -48,7 +49,7 @@ Win32::OLE->MessageLoop();
 my $XAQuery  = Win32::OLE->new('XA_DataSet.XAQuery')
     or croak Win32::OLE->LastError();
 
-$XAQuery->LoadFromResFile("$FindBin::Bin/res/Tran/t5501.res")
+$XAQuery->LoadFromResFile("$FindBin::Bin/Res/Tran/t5501.res")
     or croak Win32::OLE->LastError();
 
 my $XAQueryEvents = sub { };
@@ -85,7 +86,7 @@ $XAQuery->Request(0);
 my $XAReal = Win32::OLE->new('XA_DataSet.XAReal.1')
     or croak Win32::OLE->LastError();
 
-$XAReal->LoadFromResFile("$FindBin::Bin/res/Real/SC0_.res")
+$XAReal->LoadFromResFile("$FindBin::Bin/res/Real/SC0.res")
     or croak Win32::OLE->LastError();
 
 my $XARealEvents = sub {
