@@ -5,8 +5,6 @@ use Carp;
 use Win32::OLE qw/EVENTS/;
 use FindBin;
 
-# updated by Jay
-
 my $XASession = Win32::OLE->new('XA_Session.XASession')
     or croak Win32::OLE->LastError();
 
